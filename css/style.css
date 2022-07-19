@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --dark-blue: hsl(240, 38%, 20%);
+    --grayish-blue: hsl(240, 18%, 77%);
+    --font-inter: 'Inter', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--font-inter);
+    color: var(--dark-blue);
+    font-weight: 300;
+    overflow: hidden;
+}
+
+.main-slider{
+    max-width: 1000px;
+    position: relative;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.card-text__testimony{
+    font-size: 1.6rem;
+}
+
+.card-image,.card-text,.card-img{
+    position: relative;
+}
+
+.card-text{
+    left: 3rem;
+    z-index: 5;
+}
+
+.card-img{
+    z-index: 4;
+    border-radius: 0.2rem;
+    box-shadow: 15px 35px 35px 2px rgba(32, 32, 70, 0.2);
+}
+
+.card-text__name{
+    margin-top: 2rem;
+}
+
+.name{
+    font-weight: 700;
+}
+
+.role{
+    color: var(--grayish-blue);
+}
+
+.card-imgage__background{
+    position: absolute;
+    top:-4rem;
+    right: -4rem;
+    z-index: 2;
+}
+
+.card-imgage__background,.card-img{
+    width: 100%;
+}
+
+.card-text, .card-image{
+    flex: 1;
+}
+
+.bg-quotes{
+    background: url(../images/pattern-quotes.svg) no-repeat;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: -3.5rem;
+    left: 3.5rem;
+}
+
+.main-slider__controls{
+    background: #fff;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    border-radius: 50px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    position: absolute;
+    bottom: -1.2rem;
+    left: 3rem;
+    z-index: 5;
+}
+
+.prev,.next{
+    height: 18px;
+    width: 12px;
+    cursor: pointer;
+}
+
+.prev{
+    background: url(../images/icon-prev.svg) no-repeat;
+}
+
+.next{
+    background: url(../images/icon-next.svg) no-repeat;
+}
+
+@media screen and (max-width: 772px) {
+
+    body{
+        overflow: unset;
+    }
+    .card{
+        flex-direction: column;
+        gap: 6rem;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .card-image{
+        order: 1;
+    }
+
+    .card-text{
+        order: 2;
+        left: 0;
+        z-index: 3;
+    }
+
+    .bg-quotes, .main-slider__controls{
+        left:0;
+        right:0;
+      
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
